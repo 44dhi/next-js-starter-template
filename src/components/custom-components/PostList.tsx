@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect } from 'react'
-import styles from '@/styles/PostList.module.scss'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { useQuery } from '@tanstack/react-query';
 
@@ -27,7 +26,7 @@ function PostList() {
   })
 
   return (
-    <div className={styles['post-list']}>
+    <div className="w-full flex flex-col gap-2 p-[20px]">
       <div className='flex justify-between mb-12 mt-16 items-center gap-4'>
         <Button variant={'secondary'} size={'icon'} onClick={() => router.back()}> <ChevronLeft /></Button>
         <h1 className='font-bold text-5xl'>Sample Posts</h1>
