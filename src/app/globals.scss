@@ -58,7 +58,9 @@ body, html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
+
+
   
   *, *::before, *::after {
     box-sizing: border-box;
@@ -93,4 +95,10 @@ body, html {
   position: relative;
   width: 200px;
   height: 56px;
+}
+
+.dropdown-scroll-container {
+  max-height: 150px;
+  overflow: auto;
+  padding-bottom: 10px;
 }
