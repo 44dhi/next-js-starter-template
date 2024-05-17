@@ -6,19 +6,19 @@ import React from 'react'
 
 async function page() {
 
-  const queryClient = getQueryClient()
+  // const queryClient = getQueryClient()
 
-  await queryClient.prefetchQuery({
-    queryKey: ['posts', 1],
-    queryFn: () => getAllPosts().then((res) => {
-    return res.data;
-    }).catch((err) => console.log(err)),
-  })
+  // await queryClient.prefetchQuery({
+  //   queryKey: ['posts', 1],
+  //   queryFn: () => getAllPosts().then((res) => {
+  //   return res.data;
+  //   }).catch((err) => console.log(err)),
+  // })
 
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
+    // <HydrationBoundary state={dehydrate(queryClient)}>
       <PostList />
-    </HydrationBoundary>
+    // </HydrationBoundary>
   )
 }
 

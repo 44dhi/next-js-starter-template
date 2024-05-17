@@ -56,7 +56,7 @@ function PostList() {
         : <div className='columns-3 gap-3 '>
           {
             data?.map((key: any, index: number) => {
-              return <Card key={index} className='mb-4 break-inside-avoid-column'>
+              return <Card onClick={() => router.push(`/post/${key.id}`)} key={index} className='mb-4 break-inside-avoid-column cursor-pointer hover:scale-[103%] transition-all'>
                 <CardHeader>
                   <CardTitle className='leading-7 text-2xl'>{key?.title}</CardTitle>
                 </CardHeader>
