@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { useQuery } from '@tanstack/react-query';
 

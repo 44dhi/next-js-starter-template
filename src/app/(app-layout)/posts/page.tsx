@@ -10,10 +10,9 @@ async function page() {
 
   await queryClient.prefetchQuery({
     queryKey: ['posts', 1],
-    
     queryFn: () => getAllPosts().then((res) => {
     return res.data;
-    }),
+    }).catch((err) => console.log(err)),
   })
 
   return (

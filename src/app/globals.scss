@@ -1,50 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import '../styles/vars';
-
-body, html {
-  padding: 0;
-  margin: 0;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: antialiased;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-
-
-  @include themify($themes) {
-    background-color: hsl(themed('backgroundColor'));  
-  }
-  
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  & > * {
-    transition: 0.2s;
-  }
-
-  ::-moz-selection { /* Code for Firefox */
-    @include themify($themes) {
-      color: white;
-      background: hsl(themed('buttonColor'));  
-    }
-  }
-  
-  ::selection {
-    @include themify($themes) {
-      color: white;
-      background: hsl(themed('buttonColor'));  
-    }
-  }
-
-}
 
 @layer base {
   :root {
     --background: #{$backgroundColorLight};
     --foreground: 20 14.3% 4.1%;
-    // --card: #{$secondarySystemLight};
+    --card: #{$secondarySystemLight};
     --card-foreground: 20 14.3% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
@@ -88,6 +52,33 @@ body, html {
   }
 }
 
+body, html {
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  ::-moz-selection { /* Code for Firefox */
+    @include themify($themes) {
+      color: white;
+      background: hsl(themed('buttonColor'));  
+    }
+  }
+  
+  ::selection {
+    @include themify($themes) {
+      color: white;
+      background: hsl(themed('buttonColor'));  
+    }
+  }
+
+}
  
 @layer base {
   * {
@@ -95,12 +86,6 @@ body, html {
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-.button-class {
-  @include themify($themes) {
-    background-color: hsl(themed('buttonColor'));  
   }
 }
 

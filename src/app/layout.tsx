@@ -23,12 +23,13 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={jakarta.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
+          disableTransitionOnChange
         >
           {children}
           <Toaster expand={false} />

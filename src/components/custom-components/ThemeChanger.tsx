@@ -9,16 +9,22 @@ function ThemeChanger() {
 
   function setDarkTheme() {
     setTheme('dark')
+    toast.dismiss('dark-theme');
+    toast.dismiss('light-theme');
+
     toast.info("Theme modified", {
       id: 'dark-theme',
       dismissible: true,
       description: "Application theme changed to dark",
-      action: <Button className='ml-2' variant={'secondary'} onClick={() => {setTheme('light'); toast.dismiss('dark-theme');}}>Undo</Button>
+      action: <Button className='ml-2' variant={'secondary'} onClick={() => {setTheme('light'); toast.dismiss('dark-theme'); }}>Undo</Button>
     })
   }
 
   function setLightTheme() {
     setTheme('light')
+    toast.dismiss('dark-theme');
+    toast.dismiss('light-theme');
+    
     toast.info("Theme modified", {
       id: 'light-theme',
       dismissible: true,
@@ -29,8 +35,8 @@ function ThemeChanger() {
 
   return (
     <div className='flex flex-row gap-4 max-sm:flex-col'>
-      <Button variant={'secondary'} onClick={setDarkTheme} disabled={resolvedTheme === 'dark'}>Change Theme to dark</Button>
-      <Button variant={'secondary'} onClick={setLightTheme} disabled={resolvedTheme === 'light'}>Change Theme to light</Button>
+      <Button variant={'secondary'} onClick={setDarkTheme} disabled={resolvedTheme == 'dark'}>Change Theme to dark</Button>
+      <Button variant={'secondary'} onClick={setLightTheme} disabled={resolvedTheme == 'light'}>Change Theme to light</Button>
     </div>
   )
 }
